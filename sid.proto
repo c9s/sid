@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package sid;
+
+// The greeting service definition.
+service SIDGenerator {
+  // Sends a greeting
+  rpc Generate (SIDRequest) returns (SIDReply) {}
+}
+
+// The request message containing the user's name.
+message SIDRequest {
+  string oid = 1;
+}
+
+// The response message containing the greetings
+message SIDReply {
+  int32 code = 1;
+  string int = 2;
+  string oid = 3;
+}
