@@ -12,7 +12,7 @@ gRPC protocol is used to provide high efficiency network communication.
 
 ## Install
 
-    go get github.com/c9s/sid/sid-server
+    go get github.com/c9s/sid/sidserver
 
 ## Setting up
 
