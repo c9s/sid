@@ -60,7 +60,7 @@ func (s *SIDServer) Generate(ctx context.Context, in *sid.SIDRequest) (*sid.SIDR
 		return &sid.SIDReply{Code: ErrCodeFailedToGetLastInsertId}, nil
 	}
 
-	log.Printf("Generated ID %d with %v", id, in.Oid)
+	log.Printf("generated ID %d with %v", id, in.Oid)
 	return &sid.SIDReply{Code: 0, Id: id, Oid: in.Oid}, nil
 }
 
@@ -110,7 +110,7 @@ func main() {
 	}
 
 	for sequence, sconf := range config.Sequences {
-		log.Printf("Checking sequence %s...", sequence)
+		log.Printf("checking sequence %s...", sequence)
 
 		// oid requires 24 bytes
 		q := `CREATE TABLE IF NOT EXISTS ` + sequence + ` (
