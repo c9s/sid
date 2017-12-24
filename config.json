@@ -1,0 +1,10 @@
+{
+    "backend": {
+        "mysql": {
+            "dsn": "root@unix(/opt/local/var/run/mysql57/mysqld.sock)/sid"
+        }
+    },
+    "sequences": {
+        "jobs": {}
+    }
+}
