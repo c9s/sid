@@ -4,6 +4,8 @@ import (
 	"flag"
 	"log"
 
+	"encoding/hex"
+
 	"golang.org/x/net/context"
 
 	"github.com/c9s/sid"
@@ -29,8 +31,14 @@ func main() {
 	defer conn.Close()
 
 	oid := bson.NewObjectId()
+	oidbin, err := hex.DecodeString(oid.Hex())
+
+	if err != nil {
+		log.Fatalf("fail to decode: %v", oid.Hex())
+	}
+
 	client := sid.NewSIDGeneratorClient(conn)
-	reply, err := client.Generate(context.Background(), &sid.SIDRequest{Sequence: "jobs", Oid: []byte(oid.Hex())})
+	reply, err := client.Generate(context.Background(), &sid.SIDRequest{Sequence: "jobs", Oid: oidbin})
 	if err != nil {
 		log.Fatalf("%v.Generate(_) = _, %v: ", client, err)
 	}

@@ -60,7 +60,7 @@ func (s *SIDServer) Generate(ctx context.Context, in *sid.SIDRequest) (*sid.SIDR
 		return &sid.SIDReply{Code: ErrCodeFailedToGetLastInsertId}, nil
 	}
 
-	log.Printf("Generated ID %d with %s", id, string(in.Oid))
+	log.Printf("Generated ID %d with %v", id, in.Oid)
 	return &sid.SIDReply{Code: 0, Id: id, Oid: in.Oid}, nil
 }
 
