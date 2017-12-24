@@ -115,7 +115,7 @@ func main() {
 		// oid requires 24 bytes
 		q := `CREATE TABLE IF NOT EXISTS ` + sequence + ` (
 				id BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-				oid BINARY(24)
+				oid BINARY(14)
 			)`
 		if _, err = db.Query(q); err != nil {
 			log.Fatal(err.Error())

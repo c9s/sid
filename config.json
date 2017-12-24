@@ -5,6 +5,7 @@
         }
     },
     "sequences": {
-        "jobs": {}
+        "jobs": {},
+        "orders": {}
     }
 }
