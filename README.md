@@ -10,6 +10,10 @@ gRPC protocol is used to provide high efficiency network communication.
     go get -u github.com/golang/protobuf/protoc-gen-go
     go get -u github.com/go-sql-driver/mysql
 
+## Install
+
+    go get github.com/c9s/sid/sid-server
+
 ## Setting up
 
 To setup the sid generator, you need few things:
