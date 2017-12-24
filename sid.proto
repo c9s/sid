@@ -10,12 +10,13 @@ service SIDGenerator {
 
 // The request message containing the user's name.
 message SIDRequest {
-  string oid = 1;
+  string sequence = 1;
+  bytes oid = 2;
 }
 
 // The response message containing the greetings
 message SIDReply {
   int32 code = 1;
-  string int = 2;
-  string oid = 3;
+  int64 id = 2;
+  bytes oid = 3;
 }
